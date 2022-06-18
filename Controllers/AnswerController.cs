@@ -22,6 +22,13 @@ public class AnswerController : ControllerBase
     [HttpGet]
     public IActionResult GetResult(int percentage)
     {
-        return Ok(69);
+        return Ok(22);
+    }
+
+    [HttpGet("slow")]
+    public IActionResult Slow(int percentage)
+    { 
+        System.Threading.Thread.Sleep(4000);
+        return Ok(50);
     }
 }
